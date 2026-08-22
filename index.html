@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automatiza tu operación empresarial con agentes IA. Reduce costos 80% en 2-3 meses. Auditoría gratis.">
+    <meta name="theme-color" content="#2563EB">
+    <meta property="og:title" content="Fábrica de Agentes | Automatización Empresarial con IA">
+    <meta property="og:description" content="Reduce costos 80% en 2-3 meses. Automatiza procesos industriales, empresariales y administrativos con agentes IA.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1655720406911-01bf12b51122?w=1200&h=630&fit=crop">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Fábrica de Agentes",
+      "url": "https://fabrica-de-agentes.vercel.app",
+    "logo": "https://fabrica-de-agentes.vercel.app/logo.jpg",
+      "description": "Automatización de procesos con agentes IA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Orizaba",
+        "addressRegion": "Veracruz",
+        "addressCountry": "MX"
+      }
+    }
+    </script>
+
+    <!-- Google Analytics (comentado - agregar tu ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPDTK4F7PL"></script>
+    <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-DPDTK4F7PL');
+    </script>
+
+    <title>Fábrica de Agentes | Automatización Empresarial con IA</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1E40AF;
+            --secondary: #10B981;
+            --secondary-dark: #047857;
+            --accent: #FBBF24;
+            --neutral-50: #F9FAFB;
+            --neutral-100: #F3F4F6;
+            --neutral-700: #374151;
+            --neutral-900: #111827;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: var(--neutral-50);
+            color: var(--neutral-900);
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            flex-shrink: 0;
+            -webkit-text-fill-color: initial;
+            filter: drop-shadow(0 2px 5px rgba(37, 99, 235, 0.15));
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--neutral-700);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 60px;
+            padding: 100px 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite 1s;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 8vw, 64px);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            animation: slideUpFade 0.8s ease-out 0.2s backwards;
+        }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: clamp(18px, 4vw, 24px);
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideUpFade 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideUpFade 0.8s ease-out 0.6s backwards;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid white;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* ===== PROBLEMA Y SOLUCIÓN ===== */
+        .problema-solucion {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: var(--neutral-900);
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .column-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .column h3 {
+            font-size: 32px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .column-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .problema .column-icon {
+            background: #FEE2E2;
+        }
+
+        .solucion .column-icon {
+            background: #D1FAE5;
+        }
+
+        .column-icon:hover {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        .column ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .column li {
+            padding-left: 40px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--neutral-700);
+            transition: all 0.3s ease;
+        }
+
+        .column li:hover {
+            transform: translateX(10px);
+            color: var(--neutral-900);
+        }
+
+        .problema li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            color: #DC2626;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .solucion li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-dark);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* ===== BENEFICIOS ===== */
+        .beneficios {
+            padding: 80px 2rem;
+            background: linear-gradient(to right, var(--neutral-50) 0%, var(--neutral-100) 100%);
+        }
+
+        .beneficios-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 2px solid transparent;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            text-align: center;
+            animation: scaleUp 0.6s ease-out;
+        }
+
+        .benefit-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .benefit-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .benefit-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .benefit-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-10px);
+        }
+
+        .benefit-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            counter-reset: count;
+        }
+
+        .benefit-card:nth-child(2) .benefit-number {
+            color: var(--secondary);
+        }
+
+        .benefit-card:nth-child(3) .benefit-number {
+            color: var(--accent);
+        }
+
+        .benefit-label {
+            font-size: 16px;
+            color: var(--neutral-700);
+            margin-bottom: 15px;
+        }
+
+        .benefit-metric {
+            font-size: 14px;
+            color: var(--neutral-600);
+            padding-top: 15px;
+            border-top: 1px solid var(--neutral-200);
+            margin-top: 15px;
+        }
+
+        /* ===== CASOS Y SOCIAL PROOF ===== */
+        .casos {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .casos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .case-card {
+            background: white;
+            border: 2px solid var(--neutral-200);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .case-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .case-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .case-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .case-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+        }
+
+        .case-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .case-card h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--neutral-900);
+        }
+
+        .case-card p {
+            font-size: 14px;
+            color: var(--neutral-700);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .case-metric {
+            background: var(--neutral-50);
+            border-left: 4px solid var(--primary);
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonios {
+            margin-top: 80px;
+            padding-top: 80px;
+            border-top: 2px solid var(--neutral-200);
+        }
+
+        .testimonios-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial {
+            background: white;
+            border: 1px solid var(--neutral-200);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: var(--accent);;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--neutral-700);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .author-info h5 {
+            font-size: 14px;
+            color: var(--neutral-900);
+            margin: 0;
+        }
+
+        .author-info p {
+            font-size: 12px;
+            color: var(--neutral-700);
+            margin: 0;
+        }
+
+        /* ===== FORMULARIO ===== */
+        .formulario-section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .formulario-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .formulario-header h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .formulario-header p {
+            font-size: 18px;
+            color: var(--neutral-700);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .formulario-container {
+            background: white;
+            border-radius: 16px;
+            border: 2px solid var(--neutral-200);
+            padding: 50px;
+            box-shadow: var(--shadow-md);
+            animation: slideUpFade 0.8s ease-out;
+        }
+
+        .google-form-wrapper {
+            width: 100%;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary-dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            border-radius: 50%;
+            top: -300px;
+            right: -300px;
+        }
+
+        .cta-final::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+            border-radius: 50%;
+            bottom: -200px;
+            left: -200px;
+        }
+
+        .cta-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-final p {
+            font-size: 18px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: 40px 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero {
+                padding: 60px 1.5rem;
+                margin-top: 50px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .problema-solucion {
+                padding: 60px 1.5rem;
+            }
+
+            .formulario-container {
+                padding: 30px 20px;
+            }
+
+            .beneficios {
+                padding: 60px 1.5rem;
+            }
+
+            .casos {
+                padding: 60px 1.5rem;
+            }
+
+            .cta-final {
+                padding: 60px 1.5rem;
+            }
+
+            nav {
+                gap: 1rem;
+                font-size: 14px;
+            }
+
+            .header-content {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                gap: 0.5rem;
+                font-size: 20px;
+            }
+
+            .logo img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .column h3 {
+                font-size: 24px;
+            }
+
+            .testimonios-title {
+                font-size: 24px;
+            }
+
+            .formulario-header h2 {
+                font-size: 28px;
+            }
+        }
+
+        /* ===== ANIMACIONES SCROLL ===== */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== DARK MODE (Opcional) ===== */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #0f172a;
+                color: #f1f5f9;
+            }
+
+            header {
+                background: rgba(15, 23, 42, 0.95);
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .benefit-card, .case-card, .formulario-container, .testimonial {
+                background: #1e293b;
+                border-color: rgba(255, 255, 255, 0.1);
+                color: #f1f5f9;
+            }
+
+            .column h3, .section-title {
+                color: #f1f5f9;
+            }
+
+            .column li, .benefit-label, .case-card p, .testimonial-text {
+                color: #cbd5e1;
+            }
+
+            nav a {
+                color: #cbd5e1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Fábrica de Agentes" width="36" height="36" decoding="async">
+                <span>Fábrica de Agentes</span>
+            </div>
+            <nav>
+                <a href="#problema">Solución</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#casos">Casos</a>
+                <a href="#formulario">Contacto</a>
+                <button class="nav-cta" onclick="scrollToForm()">Agendar Reunión</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Automatiza tu operación. Multiplica tu eficiencia</h1>
+            <p>Reduce costos 80% en 2-3 meses. Prueba gratis.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToForm()">Agendar Reunión Gratis</button>
+                <button class="btn-secondary" onclick="scrollToSection('problema')">Ver Solución</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA Y SOLUCIÓN -->
+    <section class="problema-solucion" id="problema">
+        <h2 class="section-title">De Procesos Manuales a Automatización Inteligente</h2>
+        <div class="two-columns">
+            <div class="column problema">
+                <h3><span class="column-icon">⚠</span>El Problema</h3>
+                <ul>
+                    <li>Procesos manuales 5+ días</li>
+                    <li>Errores humanos constantes</li>
+                    <li>Información desorganizada</li>
+                    <li>Falta de visibilidad en operaciones</li>
+                    <li>Costos operacionales muy altos</li>
+                </ul>
+            </div>
+            <div class="column solucion column-right">
+                <h3><span class="column-icon">✓</span>Nuestra Solución</h3>
+                <ul>
+                    <li>Automatización 80% con agentes IA</li>
+                    <li>Cero errores de datos</li>
+                    <li>Información centralizada</li>
+                    <li>Dashboards en tiempo real</li>
+                    <li>Reducción de costos hasta 80%</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="beneficios" id="beneficios">
+        <div class="beneficios-container">
+            <h2 class="section-title">Impacto Real en Tu Negocio</h2>
+            <div class="beneficios-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">80%</div>
+                    <div class="benefit-label">Reducción de Tiempo Manual</div>
+                    <div class="benefit-metric">4,800 horas anuales ahorradas</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">2-3</div>
+                    <div class="benefit-label">Meses de ROI Recuperado</div>
+                    <div class="benefit-metric">Inversión recuperada en 90 días</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">100%</div>
+                    <div class="benefit-label">Precisión de Datos</div>
+                    <div class="benefit-metric">Cero errores de información</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">24/7</div>
+                    <div class="benefit-label">Operación Continua</div>
+                    <div class="benefit-metric">Procesos sin pausas ni descansos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASOS Y SOCIAL PROOF -->
+    <section class="casos" id="casos">
+        <h2 class="section-title">Casos de Uso Reales</h2>
+        <div class="casos-grid">
+            <div class="case-card">
+                <div class="case-icon">🤖</div>
+                <h4>Automatización de Pedidos</h4>
+                <p>Procesa órdenes automáticamente desde cualquier canal. Integración con inventario, facturación y envíos.</p>
+                <div class="case-metric">Ahorro: 20+ horas/mes por operador</div>
+            </div>
+            <div class="case-card">
+                <div class="case-icon">📅</div>
+                <h4>Gestión Inteligente de Citas</h4>
+                <p>Agendamiento automático, recordatorios SMS/WhatsApp, confirmación y sincronización en tiempo real.</p>
+                <div class="case-metric">Reducción de cancelaciones: 60%</div>
+            </div>
+            <div class="case-card">
+                <div class="case-icon">📊</div>
+                <h4>Reportes Automatizados</h4>
+                <p>Dashboards en vivo, análisis automáticos de datos, alertas inteligentes y reportes diarios sin intervención manual.</p>
+                <div class="case-metric">Tiempo: de 5 horas a 5 minutos</div>
+            </div>
+        </div>
+
+        <div class="testimonios">
+            <h3 class="testimonios-title">Lo que dicen nuestros clientes</h3>
+            <div class="testimonios-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Implementaron la automatización en 3 semanas. El ROI fue superior a lo esperado. Altamente recomendado."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MG</div>
+                        <div class="author-info">
+                            <h5>Mario Gómez</h5>
+                            <p>Gerente Operaciones, Empresa Logística</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Nuestro equipo se pudo enfocarse en tareas estratégicas. La calidad de datos mejoró exponencialmente."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CR</div>
+                        <div class="author-info">
+                            <h5>Carlos Rodríguez</h5>
+                            <p>Director Administrativo, Industria Manufacturera</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Soporte impeccable. Los agentes IA se adaptan a nuestros procesos específicos. Increíble."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SL</div>
+                        <div class="author-info">
+                            <h5>Sandra López</h5>
+                            <p>Coordinadora Proyectos, Empresa Comercial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO GOOGLE FORM -->
+    <section class="formulario-section" id="formulario">
+        <div class="formulario-header">
+            <h2>Comienza tu transformación hoy</h2>
+            <p>Completa el formulario y recibirás una auditoría personalizada de 30 minutos sin compromiso.</p>
+        </div>
+        <div class="formulario-container">
+            <div class="google-form-wrapper">
+                <!-- REEMPLAZA ESTA URL CON TU GOOGLE FORM ID -->
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSc4Wd8kBaofcrk0aENctiTNWGhb-AEFUnvlaA_5-hvZV500Dw/viewform?embedded=true" 
+                    width="100%" 
+                    height="700" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    loading="lazy"
+                    style="border-radius: 8px;">
+                    Cargando…
+                </iframe>
+                <!-- INSTRUCCIONES: 
+                    1. Ve a forms.google.com
+                    2. Crea un formulario con los campos: Nombre, Email, Teléfono, Empresa, Reto Operacional
+                    3. Click en "Enviar" y luego "Copiar enlace"
+                    4. Obtén el ID del formulario (está en la URL entre /d/e/ y /viewform)
+                    5. Reemplaza "1FAIpQLSd_xxxxxxxxxxxxx" con tu ID
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="cta-content">
+            <div class="urgency-badge">⏰ Oferta válida por 5 días</div>
+            <h2>¿Listo para transformar tu operación?</h2>
+            <p>50+ empresas en Orizaba, Córdoba y Xalapa ya están automatizando sus procesos. ¿Cuándo es tu turno?</p>
+            <button class="btn-primary" onclick="scrollToForm()" style="margin-top: 2rem;">Agendar Mi Auditoría Gratis</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#problema">Solución</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#casos">Casos</a>
+                <a href="mailto:contacto@fabricadeagentes.com.mx">Email</a>
+                <a href="https://wa.me/524427417706" target="_blank">WhatsApp</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">in</a>
+                <a href="https://wa.me/524427417706" target="_blank" class="social-link" title="WhatsApp">WhatsApp</a>
+                <a href="mailto:contacto@fabricadeagentes.com.mx" class="social-link" title="Email">@</a>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>© 2026 Fábrica de Agentes | Orizaba, Veracruz | <a href="mailto:edgar@fabricadeagentes.com.mx" style="color: inherit;">edgar@fabricadeagentes.com.mx</a></p>
+                <p style="margin-top: 10px; font-size: 12px;">Certificado en n8n y Eleven Labs | Expertos en Automatización con IA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== SCROLL BEHAVIOR =====
+        function scrollToForm() {
+            const formulario = document.getElementById('formulario');
+            formulario.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== COUNTER ANIMATION =====
+        const benefitNumbers = document.querySelectorAll('.benefit-number');
+        const counters = [80, 3, 100, 24]; // Valores para animar
+
+        window.addEventListener('scroll', () => {
+            benefitNumbers.forEach((num, index) => {
+                const rect = num.getBoundingClientRect();
+                if (rect.top < window.innerHeight && !num.dataset.animated) {
+                    num.dataset.animated = true;
+                    animateCounter(num, counters[index]);
+                }
+            });
+        });
+
+        function animateCounter(element, target) {
+            let current = 0;
+            const step = Math.ceil(target / 30);
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = current + (element.textContent.includes('%') ? '%' : element.textContent.includes('-') ? '' : '');
+            }, 50);
+        }
+
+        // ===== ANALYTICS TRACKING =====
+               
+        function trackEvent(eventName, eventData) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventData);
+            }
+        }
+
+        // Track CTA clicks
+        document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(button => {
+            button.addEventListener('click', () => {
+                trackEvent('button_click', {
+                    button_text: button.textContent
+                });
+            });
+        });
+
+        // Track form section visibility
+        window.addEventListener('scroll', () => {
+            const formulario = document.getElementById('formulario');
+            const rect = formulario.getBoundingClientRect();
+            if (rect.top < window.innerHeight && !formulario.dataset.viewed) {
+                formulario.dataset.viewed = true;
+                trackEvent('form_viewed', {});
+            }
+        });
+        
+
+        // ===== SMOOTH SCROLL BEHAVIOR =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // ===== HEADER SHADOW ON SCROLL =====
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+
+        // ===== PAGE LOAD TRACKING =====
+        window.addEventListener('load', () => {
+            console.log('Landing page loaded successfully');
+            // Aquí puedes agregar tu Google Analytics tracking
+        });
+    </script>
+</body>
+</html>
