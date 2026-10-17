@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Cita | DentiMax Orizaba</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --success: #10b981;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+        /* Header */
+        .header { text-align: center; margin-bottom: 30px; margin-top: 20px; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--primary); }
+        .logo i { margin-right: 8px; }
+
+        /* Tarjeta Principal */
+        .card { background: var(--white); border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 20px; }
+
+        /* Banner de Éxito */
+        .success-banner { background: linear-gradient(135deg, var(--success) 0%, #059669 100%); color: white; padding: 30px 20px; text-align: center; }
+        .success-banner i { font-size: 40px; margin-bottom: 10px; display: block; }
+        .success-banner h1 { font-size: 22px; margin-bottom: 5px; }
+        .success-banner p { font-size: 15px; opacity: 0.9; }
+
+        /* Detalles de la cita */
+        .appointment-details { padding: 25px; border-bottom: 1px solid #e2e8f0; }
+        .detail-row { display: flex; align-items: flex-start; margin-bottom: 15px; }
+        .detail-row:last-child { margin-bottom: 0; }
+        .detail-icon { color: var(--primary); width: 24px; margin-top: 3px; }
+        .detail-text h4 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .detail-text p { font-size: 16px; font-weight: 600; color: var(--text-main); }
+
+        /* Video */
+        .video-section { padding: 25px; text-align: center; background: #f1f5f9; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-top: 15px; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        /* Lista de preparación */
+        .prep-section { padding: 25px; }
+        .prep-section h3 { font-size: 18px; margin-bottom: 15px; display: flex; align-items: center; }
+        .prep-section h3 i { color: var(--primary); margin-right: 10px; }
+        .prep-list { list-style: none; }
+        .prep-list li { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 15px; }
+        .prep-list li i { color: var(--success); margin-top: 4px; margin-right: 10px; }
+
+        /* Botones de acción */
+        .actions { padding: 0 25px 25px; display: flex; flex-direction: column; gap: 12px; }
+        .btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: none; cursor: pointer; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        
+        /* Nuevo botón de calendario */
+        .btn-calendar { background: var(--white); color: var(--text-main); border: 2px solid #e2e8f0; }
+        .btn-calendar:hover { border-color: var(--primary); color: var(--primary); }
+        .btn-calendar i { color: #4285F4; font-size: 18px; } /* Color de Google Calendar */
+
+        /* Footer */
+        .footer { text-align: center; padding: 20px; font-size: 13px; color: var(--text-muted); }
+        .footer a { color: var(--primary); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header / Logo -->
+    <div class="header">
+        <div class="logo"><i class="fas fa-tooth"></i> DentiMax Orizaba</div>
+    </div>
+
+    <!-- Tarjeta Principal -->
+    <div class="card">
+        
+        <!-- Banner de Éxito -->
+        <div class="success-banner">
+            <i class="fas fa-check-circle"></i>
+            <h1 id="greeting">¡Cita Confirmada!</h1>
+            <p>Tu lugar está reservado. Te esperamos.</p>
+        </div>
+
+        <!-- Detalles de la Cita -->
+        <div class="appointment-details">
+            <div class="detail-row">
+                <div class="detail-icon"><i class="far fa-calendar-alt"></i></div>
+                <div class="detail-text">
+                    <h4>Fecha y Hora</h4>
+                    <p id="appointment-date">Lunes, 20 de Octubre a las 10:00 AM</p>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon"><i class="far fa-user"></i></div>
+                <div class="detail-text">
+                    <h4>Odontólogo</h4>
+                    <p>Dr. Luis Aceves</p>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon"><i class="fas fa-tooth"></i></div>
+                <div class="detail-text">
+                    <h4>Tratamiento</h4>
+                    <p id="treatment-type">Limpieza Dental Profunda</p>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="detail-text">
+                    <h4>Ubicación</h4>
+                    <p id="clinic-address">Av. Independencia #123, Centro, Veracruz</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video de Bienvenida -->
+        <div class="video-section">
+            <h3 style="font-size: 16px; color: var(--text-main);"><i class="fab fa-youtube" style="color: #ef4444;"></i> Mensaje de bienvenida</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 5px;">Conoce a tu doctor y nuestras instalaciones.</p>
+            <div class="video-container">
+                <!-- REEMPLAZA EL ENLACE DE YOUTUBE POR EL TUYO -->
+                <iframe src="https://youtu.be/G8nLcB8XEEg" title="Bienvenida DentiMax" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Lista de Preparación -->
+        <div class="prep-section">
+            <h3><i class="fas fa-clipboard-check"></i> Prepárate para tu visita</h3>
+            <ul class="prep-list">
+                <li><i class="fas fa-check-circle"></i> <span>Llega <strong>10 minutos antes</strong> de tu cita para tu registro.</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Presenta una <strong>identificación oficial</strong> (INE o Pasaporte).</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Si tomas medicamentos, avísanos al llegar.</span></li>
+            </ul>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="actions">
+            <!-- NUEVO BOTÓN DE CALENDARIO -->
+            <a href="#" id="calendar-btn" target="_blank" class="btn btn-calendar">
+                <i class="far fa-calendar-plus"></i> Agregar a mi calendario
+            </a>
+            <!-- Botón de Maps -->
+            <a href="https://maps.google.com/?q=Av.+Independencia+123,+Centro,+Veracruz" target="_blank" class="btn btn-primary">
+                <i class="fas fa-route"></i> Cómo llegar a la clínica
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>¿Tienes alguna duda? Llámanos al <strong>229 123 4567</strong></p>
+        <p style="margin-top: 10px;">Desarrollado por <a href="#">Fábrica de Agentes</a></p>
+    </div>
+</div>
+
+<!-- Script para personalizar dinámicamente -->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Datos de la URL (con valores por defecto para pruebas)
+    const nombrePaciente = urlParams.get('nombre') || 'Paciente';
+    const fechaTexto = urlParams.get('fecha') || 'Lunes, 20 de Octubre a las 10:00 AM';
+    const tratamiento = urlParams.get('tratamiento') || 'Limpieza Dental';
+    const direccionClinica = "Av. Independencia #123, Centro, Veracruz"; // Cámbiala por tu dirección real
+    
+    // Actualizar textos en el HTML
+    document.getElementById('greeting').innerHTML = `¡Cita Confirmada, ${nombrePaciente}!`;
+    document.getElementById('appointment-date').innerText = fechaTexto;
+    document.getElementById('treatment-type').innerText = tratamiento;
+
+    // --- LÓGICA DEL CALENDARIO ---
+    // Para que funcione, necesitamos fechas reales. 
+    // Asumiremos que la cita es para MAÑANA a la misma hora para el ejemplo de la demo.
+    // En producción (desde n8n), puedes pasar la fecha exacta por URL en formato ISO (ej. 20261020T100000Z)
+    
+    function generarEnlaceCalendario() {
+        // 1. Configurar fecha de inicio (Ejemplo: Mañana a las 10:00 AM)
+        let startDate = new Date();
+        startDate.setDate(startDate.getDate() + 1); // Mañana
+        startDate.setHours(10, 0, 0, 0); // 10:00 AM
+        
+        // 2. Configurar fecha de fin (Ejemplo: 1 hora después)
+        let endDate = new Date(startDate);
+        endDate.setHours(endDate.getHours() + 1);
+
+        // 3. Formatear fechas al estándar que pide Google Calendar (YYYYMMDDTHHMMSSZ)
+        // Nota: Google Calendar usa UTC. Para simplificar la demo, restamos las horas de diferencia.
+        const formatDate = (date) => {
+            return date.toISOString().replace(/-|:|\.\d\d\d/g, "");
+        };
+
+        const dates = `${formatDate(startDate)}/${formatDate(endDate)}`;
+        
+        // 4. Crear los parámetros de la URL
+        const params = new URLSearchParams({
+            action: 'TEMPLATE',
+            text: `Cita Dental: ${tratamiento}`,
+            dates: dates,
+            details: `Hola ${nombrePaciente}, tu cita en Clínica Dental Veracruz está confirmada. Tratamiento: ${tratamiento}.`,
+            location: direccionClinica,
+            trp: 'false' // No mostrar la lista de "invitados" que a veces confunde
+        });
+
+        // 5. Asignar el enlace al botón
+        document.getElementById('calendar-btn').href = `https://calendar.google.com/calendar/render?${params.toString()}`;
+    }
+
+    // Ejecutar la función al cargar la página
+    generarEnlaceCalendario();
+</script>
+
+</body>
+</html>
